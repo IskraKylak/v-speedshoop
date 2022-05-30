@@ -56,7 +56,29 @@ export default {
       image: 'product2.jpg',
       isSimile: false
     }]
-    
+
     commit('SET_PRODUCTS_TO_STATE', products)
+  },
+  GET_CATALOG_FROM_API ({ commit }) {
+    return axios('https://speedshop.pp.ua/api/menu-catalog', {
+      method: 'GET'
+    }).then((catalog) => {
+      commit('SET_CATALOG_TO_STATE', catalog.data.data)
+      return catalog.data
+    }).catch((error) => {
+      console.log(error)
+      return error
+    })
+  },
+  GET_MAIN_PAGE_FROM_API ({ commit }) {
+    return axios('https://speedshop.pp.ua/api/block/', {
+      method: 'GET'
+    }).then((main) => {
+      commit('SET_MAIN_PAGE_TO_STATE', main.data)
+      return main.data
+    }).catch((error) => {
+      console.log(error)
+      return error
+    })
   }
 }

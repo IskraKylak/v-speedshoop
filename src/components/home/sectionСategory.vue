@@ -6,9 +6,9 @@
             Хиты продаж
           </h3>
           <div class="list_product">
-            <div class="item_product" v-for="(item, idx) in PRODUCTS" :key="idx">
+            <div class="item_product" v-for="(item, idx) in MAIN_PAGE[0].featured" :key="idx">
               <a href="#" @click.prevent="goToProduct(item.id)" class="wrap_img">
-                <img :src="require('@/assets/img/' + item.image)" alt="img">
+                <img src="@/assets/img/product2.jpg" alt="img">
               </a>
               <a href="#" @click.prevent="goToProduct(item.id)" class="name_product">
                 {{ item.name }}
@@ -34,11 +34,11 @@
               <div class="wrap_basket">
                 <div class="price_product">
                   <div class="old_price">
-                    <p>{{ item.price }}</p>
+                    <p>{{ item.regular_price }}</p>
                     <span>-7%</span>
                   </div>
                   <div class="new_price">
-                    {{ item.price }} грн.
+                    {{ item.sale_price }} грн.
                   </div>
                 </div>
                 <button class="my_btn btn_basket" @click="addToCart(item)">
@@ -91,9 +91,10 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'PRODUCTS',
+      'MAIN_PAGE',
       'CART',
-      'SIMILE'
+      'SIMILE',
+      'CATALOG'
     ])
   }
 }

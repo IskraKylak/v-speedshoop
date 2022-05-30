@@ -100,7 +100,7 @@
                 <div class="lpb_item" v-for="(item, idx) in CART" key="item.id">
                   <div class="lpb_left">
                     <div class="wrap_img">
-                      <img :src="require('@/assets/img/' + item.image)" alt="img">
+                      <img src="@/assets/img/product2.jpg" alt="img">
                     </div>
                     <a href="#" class="lbp_name">
                       {{ item.name }}
@@ -112,7 +112,7 @@
                         Цена
                       </div>
                       <div class="lbp_meaning">
-                        {{ item.price }}
+                        {{ item.sale_price }}
                       </div>
                     </div>
                     <div class="lbp_wrap_info">
@@ -128,7 +128,7 @@
                         Сумма
                       </div>
                       <div class="lbp_meaning">
-                        {{ item.price * item.quantity }}
+                        {{ item.sale_price * item.quantity }}
                       </div>
                     </div>
                   </div>
@@ -288,7 +288,7 @@ export default {
     sumProduct () {
       let sum = 0
       for (const item of this.CART) {
-        sum = sum + (item.price * item.quantity)
+        sum = sum + (item.sale_price * item.quantity)
       }
       return sum
     },

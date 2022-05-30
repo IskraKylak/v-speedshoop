@@ -183,33 +183,31 @@ export default {
   }
 }
 
-const div = document.querySelector( '.left_menu');
-const div2 = document.querySelector( '.menu_burger');
+const div = document.querySelector('.left_menu')
+const div2 = document.querySelector('.menu_burger')
 
-const div3 = document.querySelector( '.header');
-document.addEventListener( 'click', (e) => {
-
-  const withinBoundaries3 = e.composedPath().includes(div3);
-  if(document.querySelector( '.menu_catalog ').classList.contains('active') && window.innerWidth > 991) {
-    if ( !withinBoundaries3 && withinBoundaries5 ) {
-      document.querySelector( '.menu_catalog ').classList.remove('active');
-      document.querySelector( 'body ').classList.remove('catalog_open');
-      document.querySelector( '.burger span').classList.remove('active');
+const div3 = document.querySelector('.header')
+document.addEventListener('click', (e) => {
+  const withinBoundaries3 = e.composedPath().includes(div3)
+  if (document.querySelector('.menu_catalog ').classList.contains('active') && window.innerWidth > 991) {
+    if (withinBoundaries3) {
+      document.querySelector('.menu_catalog ').classList.remove('active')
+      document.querySelector('body ').classList.remove('catalog_open')
+      document.querySelector('.burger span').classList.remove('active')
     }
   }
 
-  const withinBoundaries = e.composedPath().includes(div);
-  const withinBoundaries2 = e.composedPath().includes(div2);
+  const withinBoundaries = e.composedPath().includes(div)
+  const withinBoundaries2 = e.composedPath().includes(div2)
 
-  if(document.querySelector( '.left_menu').classList.contains('open_menu') && window.innerWidth <= 991) {
-    if ( !withinBoundaries &&  !withinBoundaries2) {
-      div.classList.remove('open_menu');
-      document.querySelector('.burger span').classList.remove('active');
-      document.querySelector('body').classList.remove('catalog_open');
+  if (document.querySelector('.left_menu').classList.contains('open_menu') && window.innerWidth <= 991) {
+    if (!withinBoundaries && !withinBoundaries2) {
+      div.classList.remove('open_menu')
+      document.querySelector('.burger span').classList.remove('active')
+      document.querySelector('body').classList.remove('catalog_open')
     }
   }
 })
-
 
 </script>
 <style lang="scss" scoped>

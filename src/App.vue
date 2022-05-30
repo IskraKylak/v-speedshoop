@@ -23,11 +23,15 @@ export default {
   },
   methods: {
     ...mapActions([
-      'GET_PRODUCTS_FROM_API'
+      'GET_PRODUCTS_FROM_API',
+      'GET_CATALOG_FROM_API',
+      'GET_MAIN_PAGE_FROM_API'
     ])
   },
   mounted () {
+    this.GET_MAIN_PAGE_FROM_API()
     this.GET_PRODUCTS_FROM_API()
+    this.GET_CATALOG_FROM_API()
   }
 }
 </script>

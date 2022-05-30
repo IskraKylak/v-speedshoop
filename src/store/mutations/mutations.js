@@ -10,6 +10,12 @@ export default {
     state.isMobile = false
     state.isDesktop = true
   },
+  SET_MAIN_PAGE_TO_STATE: (state, main) => {
+    state.mainPage = main
+  },
+  SET_CATALOG_TO_STATE: (state, catalog) => {
+    state.catalog = catalog
+  },
   SET_PRODUCTS_TO_STATE: (state, products) => {
     state.products = products
     if (state.simile.length > 0) {

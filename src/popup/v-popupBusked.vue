@@ -12,7 +12,7 @@
           <div class="list_cart">
             <div class="lc_item"  v-for="(item, idx) in CART" key="item.id">
               <div class="wrap_img">
-                <img :src="require('@/assets/img/' + item.image)" alt="img">
+                <img src="@/assets/img/product2.jpg" alt="img">
               </div>
               <div class="lc_wrap_name">
                 <div class="lc_name">
@@ -48,7 +48,7 @@
                   </div>
                 </div>
                 <div class="lwp_price">
-                  {{ item.price }}
+                  {{ item.sale_price }}
                 </div>
                 <!--нужно для цены за 1 товар-->
                 <div class="single_price d-none">{{ item.price }}</div>
@@ -115,7 +115,7 @@ export default {
       let result = []
       if (this.CART.length) {
         for (const item of this.CART) {
-          result.push(item.price * item.quantity)
+          result.push(item.sale_price * item.quantity)
         }
         result = result.reduce(function (sum, el) {
           return parseInt(sum + el)

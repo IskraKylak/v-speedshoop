@@ -11,6 +11,8 @@ const simile = window.localStorage.getItem('simile')
 
 export default createStore({
   state: {
+    mainPage: [],
+    catalog: '',
     searchValue: '',
     products: [],
     cart: cart ? JSON.parse(cart) : [],
