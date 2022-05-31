@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <div class="breadcrumbs">
       <a href="" class="home_link"></a>
       <span class="icon icon_arr_right"></span>

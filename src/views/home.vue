@@ -36,7 +36,7 @@
           </div>
           <div class="right_width">
             <div class="slider_list">
-              <div class="sl_item" v-for="(item, idxMain) in MAIN_PAGE[0].mainslider" :key="idxMain">
+              <div class="sl_item" v-for="(item, idxMain) in MAIN_PAGE.mainslider" :key="idxMain">
                 <div class="sl_content">
                   <div class="wrap_image">
                     <img :src="'https://speedshop.pp.ua/storage/galleries/' + item.img" alt="img">

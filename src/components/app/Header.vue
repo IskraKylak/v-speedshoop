@@ -99,7 +99,14 @@
                       {{ cat2.name }}
                     </a>
                     <div class="un_menu">
-                      <a href="#" v-for="(cat3, idx3) in cat2.children_categories" :key="idx3">{{ cat3.name }}</a>
+                      <a
+                        href="#"
+                        v-for="(cat3, idx3) in cat2.children_categories"
+                        :key="idx3"
+                        @click.prevent="GoToCategory(cat.id, cat2.id, cat3,id)"
+                      >
+                        {{ cat3.name }}
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -232,7 +239,7 @@
 import vPopupBusked from '@/popup/v-popupBusked'
 import vPopupSingUp from '@/popup/v-popupSingUp'
 import vPopupSingIn from '@/popup/v-popupSingIn'
-import { mapGetters } from "vuex"
+import { mapGetters } from 'vuex'
 export default {
   name: 'Header',
   data () {
@@ -265,6 +272,12 @@ export default {
     ])
   },
   methods: {
+    GoToCategory (catId1, catId2, catId3) {
+      this.$router.push({
+        name: 'category',
+        params: { Pid: catId3 }
+      })
+    },
     GoToComparison () {
       this.$router.push({
         name: 'comparison'
@@ -285,7 +298,7 @@ export default {
         this.isBuskedPopupVisible = true
         document.querySelector('body').setAttribute('style', 'overflow: hidden')
       } else {
-        this.$message("Додайте товар у кошик!")
+        this.$message('Додайте товар у кошик!')
       }
     },
     closeSingUpPopup () {
@@ -311,7 +324,7 @@ export default {
   },
   mounted () {
     // Ховер для бокового меню
-    $('.mc_link').hover(function() {
+    $('.mc_link').hover(function () {
       $('.menu_catalog').addClass('catalog_hover')
     }, function () {
       $('.menu_catalog').removeClass('catalog_hover')
@@ -326,11 +339,10 @@ $(function () {
   })
 })
 
-
 $(document).mouseup(function (e) { // событие клика по веб-документу
   var div = $('.header') // тут указываем ID элемента
-  if (!div.is(e.target) // если клик был не по нашему блоку
-    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+  if (!div.is(e.target) && // если клик был не по нашему блоку
+    div.has(e.target).length === 0) { // и не по его дочерним элементам
     div.removeClass('open')
     $('body').removeClass('catalog_open')
     $('.menu_catalog ').removeClass('active')
@@ -339,7 +351,7 @@ $(document).mouseup(function (e) { // событие клика по веб-до
       $('.left_menu').removeClass('open_menu')
     }
   }
-});
+})
 
 </script>
 <style lang="scss" scoped>

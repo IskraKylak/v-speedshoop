@@ -4,6 +4,7 @@ import 'materialize-css/dist/js/materialize.min'
 import router from './router'
 import store from './store'
 import './assets/css/style.css'
+import './assets/css/select2.css'
 import messagePlugin from './utils/message.plugin'
 // import './assets/js/app.min.js'
 

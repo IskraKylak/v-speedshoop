@@ -6,7 +6,7 @@
             Хиты продаж
           </h3>
           <div class="list_product">
-            <div class="item_product" v-for="(item, idx) in MAIN_PAGE[0].featured" :key="idx">
+            <div class="item_product" v-for="(item, idx) in MAIN_PAGE.featured" :key="idx">
               <a href="#" @click.prevent="goToProduct(item.id)" class="wrap_img">
                 <img src="@/assets/img/product2.jpg" alt="img">
               </a>

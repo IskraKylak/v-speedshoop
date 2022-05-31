@@ -74,7 +74,7 @@ export default {
     return axios('https://speedshop.pp.ua/api/block/', {
       method: 'GET'
     }).then((main) => {
-      commit('SET_MAIN_PAGE_TO_STATE', main.data)
+      commit('SET_MAIN_PAGE_TO_STATE', main.data[0])
       return main.data
     }).catch((error) => {
       console.log(error)

@@ -8,6 +8,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/home.vue')
   },
   {
+    path: '/category/:Pid',
+    name: 'category',
+    meta: { layout: 'empty' },
+    component: () => import(/* webpackChunkName: "about" */ '../views/category.vue')
+  },
+  {
     path: '/order',
     name: 'order',
     meta: { layout: 'empty' },
