@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="container">
+    <h2>Contacts</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Promotion',
+  name: 'Contacts',
   components: {
   }
 }

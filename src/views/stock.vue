@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="container">
+    <h2>Stock</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Promotion',
+  name: 'Stock',
   components: {
   }
 }

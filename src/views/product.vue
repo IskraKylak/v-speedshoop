@@ -1,7 +1,9 @@
 <template>
   <div>
+  <div class="container">
     <Breadcrumbs/>
-    <section class="section_product section">
+  </div>
+  <section class="section_product section">
       <div class="container">
         <div class="wrap_title">
           <h2 class="title_product">
@@ -399,9 +401,9 @@
   </div>
 </template>
 <script>
-import Breadcrumbs from '@/components/breadcrumbs'
-import Reviews from '@/components/product/productReviews'
 
+import Reviews from '@/components/product/productReviews'
+import Breadcrumbs from '@/components/breadcrumbs'
 import '@/assets/js/slick.js'
 import '@/assets/js/jquery.fancybox.js'
 export default {
@@ -412,8 +414,7 @@ export default {
     }
   },
   components: {
-    Breadcrumbs,
-    Reviews
+    Reviews, Breadcrumbs
   },
   beforeRouteLeave () {
     if($(".slider_product_for").hasClass("slick-initialized") &&

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="filter_mobile_left">
+    <div v-if="false" class="filter_mobile_left">
       <div class="fml_Head">
         Фильтры
         <div class="close_filter" onclick="closeFilter(this)">
@@ -19,14 +19,14 @@
             </div>
           </div>
           <div class="flms_block flms_block--slider">
-            <div class="filter__cost table">
 
+            <div class="filter__cost table">
               <div class="table-cell">
-                <input id="priceMin" type="text" value="5000" class="form-control">
+                <input type="text" :value="minPrice" class="form-control">
               </div>
               <span class="tire">&mdash;</span>
               <div class="table-cell">
-                <input id="priceMax" type="text" value="15000" class="form-control">
+                <input type="text" :value="maxPrice" class="form-control">
               </div>
               <button class="my_btn btn_filter">ok</button>
             </div>
@@ -238,14 +238,32 @@
             :class="[openFilter1 && 'open']"
           >
             <div class="filter__block filter__block--slider">
+              <div class="range-slider">
+                <input
+                  type="range"
+                  min="0"
+                  max="10000"
+                  step="10"
+                  v-model.number="minPrice"
+                  @change="setRangeSliders"
+                >
+                <input
+                  type="range"
+                  min="0"
+                  max="10000"
+                  step="10"
+                  v-model.number="maxPrice"
+                  @change="setRangeSliders"
+                >
+              </div>
               <div class="filter__cost table">
 
                 <div class="table-cell">
-                  <input id="priceMin" type="text" value="5000" class="form-control">
+                  <input type="text" :value="minPrice" class="form-control">
                 </div>
                 <span class="tire">&mdash;</span>
                 <div class="table-cell">
-                  <input id="priceMax" type="text" value="15000" class="form-control">
+                  <input type="text" :value="maxPrice" class="form-control">
                 </div>
                 <button class="my_btn btn_filter2">ok</button>
               </div>
@@ -400,19 +418,44 @@ export default {
     return {
       openFilter1: true,
       openFilter2: false,
-      openFilter3: false
+      openFilter3: false,
+      minPrice: 0,
+      maxPrice: 10000
     }
   },
   components: {
   },
   methods: {
-
+    setRangeSliders () {
+      if (this.minPrice > this.maxPrice) {
+        const tmp = this.maxPrice
+        this.maxPrice = this.minPrice
+        this.minPrice = tmp
+      }
+    }
   }
 }
-
-
 
 </script>
 
 <style lang="scss" scoped>
+.range-slider {
+  width: 200px;
+  margin: auto 16px;
+  text-align: center;
+  position: relative;
+}
+
+.range-slider svg, .range-slider input[type=range] {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  z-index: 2;
+  position: relative;
+  top: 2px;
+  margin-top: -7px;
+}
 </style>

@@ -9,18 +9,18 @@
           </div>
           <div class="right_width">
             <div class="menu_head">
-              <a href="#">
+              <router-link to="/stock">
                 Акции
-              </a>
-              <a href="#">
+              </router-link>
+              <router-link to="/blog">
                 Блог
-              </a>
-              <a href="#">
+              </router-link>
+              <router-link to="/company">
                 О компании
-              </a>
-              <a href="#">
+              </router-link>
+              <router-link to="/contacts">
                 Контакты
-              </a>
+              </router-link>
             </div>
             <div class="wrap_select_tel">
               <span class="icon icon_tel"></span>
@@ -103,7 +103,7 @@
                         href="#"
                         v-for="(cat3, idx3) in cat2.children_categories"
                         :key="idx3"
-                        @click.prevent="GoToCategory(cat.id, cat2.id, cat3,id)"
+                        @click.prevent="GoToCategory(cat.id, cat2.id, cat3.id)"
                       >
                         {{ cat3.name }}
                       </a>

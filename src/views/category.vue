@@ -1,10 +1,14 @@
 <template>
-  <div class="container">
-    <Breadcrumbs/>
-    <h2 class="title_page">Телевизоры</h2>
-    <div class="wrap_syngle_category">
-      <Filter></Filter>
-      <sCategory/>
+  <div>
+    <div class="container">
+      <Breadcrumbs/>
+    </div>
+    <div class="container">
+      <h2 class="title_page">Телевизоры</h2>
+      <div class="wrap_syngle_category">
+        <Filter></Filter>
+        <sCategory/>
+      </div>
     </div>
   </div>
 </template>

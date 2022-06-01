@@ -37,6 +37,30 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/comparison.vue')
   },
   {
+    path: '/stock',
+    name: 'stock',
+    meta: { layout: 'empty' },
+    component: () => import(/* webpackChunkName: "about" */ '../views/stock.vue')
+  },
+  {
+    path: '/blog',
+    name: 'blog',
+    meta: { layout: 'empty' },
+    component: () => import(/* webpackChunkName: "about" */ '../views/blog.vue')
+  },
+  {
+    path: '/company',
+    name: 'company',
+    meta: { layout: 'empty' },
+    component: () => import(/* webpackChunkName: "about" */ '../views/aboutCompany.vue')
+  },
+  {
+    path: '/contacts',
+    name: 'contacts',
+    meta: { layout: 'empty' },
+    component: () => import(/* webpackChunkName: "about" */ '../views/contacts.vue')
+  },
+  {
     path: '/lc-favorite',
     name: 'lc-favorite',
     meta: {

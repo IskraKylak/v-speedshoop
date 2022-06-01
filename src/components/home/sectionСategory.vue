@@ -6,7 +6,11 @@
             Хиты продаж
           </h3>
           <div class="list_product">
-            <div class="item_product" v-for="(item, idx) in MAIN_PAGE.featured" :key="idx">
+            <div
+              class="item_product"
+              v-for="(item, idx) in MAIN_PAGE.featured"
+              :key="idx"
+            >
               <a href="#" @click.prevent="goToProduct(item.id)" class="wrap_img">
                 <img src="@/assets/img/product2.jpg" alt="img">
               </a>
@@ -34,7 +38,7 @@
               <div class="wrap_basket">
                 <div class="price_product">
                   <div class="old_price">
-                    <p>{{ item.regular_price }}</p>
+                    <p>{{ item.regular_price }} грн.</p>
                     <span>-7%</span>
                   </div>
                   <div class="new_price">
@@ -66,15 +70,15 @@ export default {
   methods: {
     addOrRemoveToSimile (product) {
       if (product.isSimile) {
-        this.$message("Товар видалено із порівняння!")
+        this.$message('Товар видалено із порівняння!')
         this.DELETE_TO_SIMILE(product.id)
       } else {
-        this.$message("Товар додано у порівняння!")
+        this.$message('Товар додано у порівняння!')
         this.ADD_TO_SIMILE(product)
       }
     },
     addToCart (item) {
-      this.$message("Товар додано!")
+      this.$message('Товар додано!')
       this.ADD_TO_CART(item)
     },
     goToProduct (prodId) {

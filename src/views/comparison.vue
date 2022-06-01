@@ -1,6 +1,8 @@
 <template>
   <div>
-    <Breadcrumbs/>
+    <div class="container">
+      <Breadcrumbs/>
+    </div>
     <div class="wrap_nav_comparison">
       <div class="container">
         <div class="nav_comparison">

@@ -26,7 +26,14 @@
                         {{ cat_slid2.name }}
                       </a>
                       <div class="un_menu">
-                        <a href="#" v-for="(cat_slid3, idx2) in cat_slid2.children_categories" :key="idx2">{{ cat_slid3.name }}</a>
+                        <a
+                          href="#"
+                          v-for="(cat_slid3, idx2) in cat_slid2.children_categories"
+                          :key="idx2"
+                          @click.prevent="GoToCategory(cat_slid.id, cat_slid2.id, cat_slid3.id)"
+                        >
+                          {{ cat_slid3.name }}
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -94,6 +101,12 @@ export default {
     ])
   },
   methods: {
+    GoToCategory (catId1, catId2, catId3) {
+      this.$router.push({
+        name: 'category',
+        params: { Pid: catId3 }
+      })
+    },
     ...mapActions([
       'GET_MAIN_PAGE_FROM_API'
     ])
